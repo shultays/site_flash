@@ -1,0 +1,66 @@
+<html><head>
+
+
+<meta http-equiv="Content-Language" content="tr">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1254">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon"><title>an Özshultays Production</title>
+
+
+<style type="text/css"> 
+html,body {
+height:100%;
+width:100%;
+overflow:auto;
+} 
+</style>
+<script type="text/javascript" src="flashobject.js"></script>
+<script type="text/javascript" src="flash_resize.js"></script>
+<script>
+
+function pop_ac(adres,w,h){
+	window.open(adres, "pop", "status=1,width="+w+",height="+h+",resizable=0" )
+}
+
+function yenile(){
+	//alert(document.body.clientHeight);
+	//alert(document.body.offsetHeight);
+	w = document.body.clientWidth;
+	h = document.body.clientHeight;
+
+	if(w<300){
+	  h = (w/300)*h;
+	  w = 300;
+	}
+
+	if(h<300){
+	  w = (h/300)*w;
+	  h = 300;
+	}
+
+	if(w > h*(5/2)) w = h*5/2;
+
+	if(h > w*(5/2)) h = w*5/2;
+
+	//document.getElementById("flashtd").width=document.body.clientWidth-400;
+	setFlashSize('flashyer', w, h);
+}
+
+function olustur(){
+   var fla = new FlashObject("tridi_as3.swf", "tridi", "100%", "100%", "8", "#000000",true);
+   fla.addParam("movie","loader.swf");
+   fla.addParam("quality","high");
+   fla.addParam("menu","false");
+   fla.addParam("bgcolor","#000000");
+   fla.addParam("allowScriptAccess" ,"sameDomain");
+   fla.write("flashyer");
+   yenile();
+
+}
+
+</script>
+</head>
+<body onload="olustur()" onresize="yenile()" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" bgcolor="#C14F03">
+<center>
+<div id="flashyer" style="position: relative; width: 688.5px; height: 459px;align:center;"><embed type="application/x-shockwave-flash" src="tridi_as3.swf" id="tridi" name="tridi" bgcolor="#000000" quality="high" movie="loader.swf" menu="false" allowscriptaccess="sameDomain" align="left" height="100%" width="100%"></div>
+</center>	
+</body></html>
